@@ -32,12 +32,17 @@ repository: "gmshashank/gmshashank.github.io"
 # You can find your shortname on the Settings page of your Disqus account
 disqus: 
 
+# Analytics
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: 
+analytics:
+  provider               : "none" #"google"
+  google:
+    tracking_id          :
+    anonymize_ip         : # true, false (default)
 
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "gmshashank.blog" # the base hostname & protocol for your site, e.g. http://example.com
+url: "gmshashank.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  gmshashank
 linkedin_username: shashankmewada
@@ -89,6 +94,8 @@ author:
   name     : "Shashank Mewada"
   avatar   : "/images/sgm_profile_pic.jpg"
   bio      : "Mechanical Engineer. Interested in AI, Deep Learning, 3D Visualization, CAE, Linux/open-source, Chess."
+  location : London
+  email	   : "gmshashank@gmail.com"
   links:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
