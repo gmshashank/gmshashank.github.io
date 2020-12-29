@@ -1,0 +1,113 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Shashank Space
+
+name: Shashank Mewada
+
+description: >- # this means to ignore newlines until "baseurl:"
+  Free format blog of Shashank Mewada
+
+repository: "gmshashank/gmshashank.github.io"
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: 
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: 
+
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "gmshashank.blog" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: 
+github_username:  gmshashank
+linkedin_username: shashankmewada
+
+# Build settings
+remote_theme: "mmistakes/minimal-mistakes@4.20.1"
+#minimal_mistakes_skin: "air"
+#theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+
+disable_disk_cache: True
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      words_per_minute: 250
+      comments: true
+      share: true
+      related: true
+      show_date: true
+      author_profile: true
+
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-light" # "github-dark"
+    issue_term: "pathname"
+
+search: true
+
+google:
+  search_engine_id: 
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: 
+    anonymize_ip: false # default
+
+author:
+  name     : "Shashank Mewada"
+  avatar   : "/images/sgm_profile_pic.jpg"
+  bio      : "Mechanical Engineer. Interested in AI, Deep Learning, 3D Visualization, CAE, Linux/open-source, Chess."
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/shashankmewada/"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/gmshashank"
+
+paginate: 10
+
+exclude:
+   - .sass-cache/
+   - .jekyll-cache/
+   - gemfiles/
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+   - .idea/

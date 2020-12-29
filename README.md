@@ -1,2 +1,2 @@
-# gmshashank.github.io
-Personal Webpage
+# blog
+Personal Blog
