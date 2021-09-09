@@ -9,13 +9,15 @@ tags: WSL2 CUDA setup python machine_learning deep_learning
 {% include toc title="Table of Contents" %}
 
 I recently installed Windows on my laptop - Asus ROG Strix GL553VD (7700HQ, FHD, GTX 1050). As I do software development on both Windows and Ubuntu, I wanted to use both simultaneously instead of using the option of dual boot or VirtualBox. 
-I wanted to build Deep Learning (Pytorch/Tensorflow) models and 
+I wanted to build Deep Learning (Pytorch/Tensorflow) models and using a GPU with Pytorch requires an NVIDIA GPU and the CUDA toolkit installed.
+Hence, below is summary of the setup.The following librabry/packages will be installed:
+-WSL2
+-CUDA 
+-Windows Terminal
+-Miniconda
+-PyTorch
+ 
 
-With WSL 2 and GPU paravirtualization technology, Microsoft enables developers to run GPU accelerated applications on Windows. 
-NVIDIA GPU acceleration will be available with official support on Pascal and later GeForce and Quadro GPUs in Windows Device Driver Model. 
-
-
-Using a GPU with pytorch requires an NVIDIA GPU and the CUDA toolkit installed. 
 
 # Microsoft Windows Insider Preview OS Build
 Register for the [Windows Insider Program](https://insider.windows.com/en-us/getting-started/#register) and choose dev channel as your [flighting channel](https://docs.microsoft.com/en-us/windows-insider/flighting#switching-between-channels) (previously fast rings).
@@ -70,8 +72,6 @@ Install Windows Terminal(https://docs.microsoft.com/en-us/windows/terminal/get-s
 
 
 ## Move WSL2 Safely to another location (Optional)
-https://avinal.space/posts/development/wsl1.html#:~:text=%20Move%20WSL%202%20Safely%20to%20another%20Drive,to%20move%20is%20is%20currently%20running%2Fstopped.%20More%20
-
 It is real pain when you have small SSD and Windows Subsystem for Linux (WSL) is growing exponentially in size. The following method can be used to move the WSL installation to another drive. 
 
 Open PowerShell as Administrator and run:
@@ -95,7 +95,7 @@ wsl --export Ubuntu "G:\WSL2\ubuntu-ex.tar"
 wsl --unregister Ubuntu
 ```
 
-### Step 5 - Create a new folder and import your WSL installation to that folder.
+### Step 5 - Create a new folder and import your WSL installation to that folder
 ```powershell
 wsl --import Ubuntu "G:\WSL2\wsl_ubuntu" "G:\WSL2\ubuntu-ex.tar"
 ```
@@ -105,7 +105,7 @@ wsl --import Ubuntu "G:\WSL2\wsl_ubuntu" "G:\WSL2\ubuntu-ex.tar"
 wsl -l -v
 ```
 
-### Step 7 - Mark one of your WSL distribution as (default).
+### Step 7 - Mark one of your WSL distribution as (default)
 ```powershell
 wsl -s Ubuntu
 ```
@@ -115,16 +115,15 @@ wsl -s Ubuntu
 ubuntu config --default-user user
 ```
 
-### Step 9 - Finally run wsl and you have successfully moved your WSL 2 installation to another drive.
+### Step 9 - Finally run wsl and you have successfully moved your WSL 2 installation to another drive
 ```powershell
 wsl
 ```
 
 
 ## CUDA on WSL2
-https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers
 
-### Step 1 - Run WSL 2.
+### Step 1 - Run WSL 2
 ```powershell
 wsl
 ```
@@ -201,6 +200,7 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
 Test passed
 ```
 
+
 ## Miniconda
 Anaconda is a full distribution of the central software in the PyData ecosystem, and includes Python itself along with the binaries for several hundred third-party open-source projects. 
 Miniconda is essentially an installer for an empty conda environment, containing only Conda, its dependencies, and Python
@@ -234,6 +234,7 @@ conda create --name ENV_NAME
 conda activate cnn
 ```
 
+
 ## Pytorch 
 
 ```bash
@@ -247,3 +248,8 @@ import torch
 torch.cuda.is_available()
 ```
 
+
+# References
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers
+https://avinal.space/posts/development/wsl1.html#:~:text=%20Move%20WSL%202%20Safely%20to%20another%20Drive,to%20move%20is%20is%20currently%20running%2Fstopped.%20More%20
