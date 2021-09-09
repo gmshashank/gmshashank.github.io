@@ -31,7 +31,7 @@ CUDA support enables GPU accelerated computing for data science, machine learnin
 
 # WSL2
 
-## install WSL2
+## Install WSL2
 Install WSL 2 by following the instructions in the Microsoft documentation available [here](https://docs.microsoft.com/windows/wsl/install-win10).
 
 Open PowerShell as Administrator and run:
@@ -250,6 +250,6 @@ torch.cuda.is_available()
 
 
 # References
-https://docs.microsoft.com/en-us/windows/wsl/install-win10
-https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers
-https://avinal.space/posts/development/wsl1.html#:~:text=%20Move%20WSL%202%20Safely%20to%20another%20Drive,to%20move%20is%20is%20currently%20running%2Fstopped.%20More%20
+[WSL2 installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+[CUDA on WSL User Guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers)
+[Move WSL 2 Safely to another Drive](https://avinal.space/posts/development/wsl1.html)
